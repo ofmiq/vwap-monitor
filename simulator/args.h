@@ -22,15 +22,15 @@
  */
 typedef struct
 {
-     int    num_tickers; /**< Number of tickers to simulate */
-     int    rate;        /**< Average trade messages per second */
-     double burst;       /**< Burst coefficient */
-     double chaos;       /**< Chaos coefficient  */
-     int    duration;    /**< Simulation duration in seconds */
+     int    num_tickers; /**< Number of tickers to simulate (-t) */
+     int    rate;        /**< Average trade messages per second (-r) */
+     double burst;       /**< Burst coefficient (-b) */
+     double chaos;       /**< Chaos coefficient (-c) */
+     int    duration;    /**< Simulation duration in seconds (-d) */
 } SimConfig;
 
 /**
- * @brief Parse command line arguments
+ * @brief Parses command line arguments
  * @param argc Argument count
  * @param argv Argument vector
  * @param config Pointer to SimConfig struct
