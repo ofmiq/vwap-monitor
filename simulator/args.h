@@ -19,4 +19,6 @@ typedef struct
      int    duration;
 } SimConfig;
 
+int parse_args(int argc, char *argv[], SimConfig *config);
+
 #endif
