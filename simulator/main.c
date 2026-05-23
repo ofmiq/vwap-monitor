@@ -12,5 +12,12 @@ int main(int argc, char *argv[])
           return 1;
      }
 
+     // debug: print parsed config
+     printf("tickers:  %d\n", config.num_tickers);
+     printf("rate:     %d\n", config.rate);
+     printf("burst:    %.2f\n", config.burst);
+     printf("chaos:    %.2f\n", config.chaos);
+     printf("duration: %d\n", config.duration);
+
      return 0;
 }
