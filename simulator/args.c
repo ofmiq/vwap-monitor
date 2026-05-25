@@ -17,23 +17,23 @@ int parse_args(int argc, char *argv[], SimConfig *config)
      {
           switch(opt)
           {
-          case 't':
-               config->num_tickers = atoi(optarg);
-               break;
-          case 'r':
-               config->rate = atoi(optarg);
-               break;
-          case 'b':
-               config->burst = atof(optarg);
-               break;
-          case 'c':
-               config->chaos = atof(optarg);
-               break;
-          case 'd':
-               config->duration = atoi(optarg);
-               break;
-          default:
-               return ARGS_ERROR;
+               case 't':
+                    config->num_tickers = atoi(optarg);
+                    break;
+               case 'r':
+                    config->rate = atoi(optarg);
+                    break;
+               case 'b':
+                    config->burst = atof(optarg);
+                    break;
+               case 'c':
+                    config->chaos = atof(optarg);
+                    break;
+               case 'd':
+                    config->duration = atoi(optarg);
+                    break;
+               default:
+                    return ARGS_ERROR;
           }
      }
 
