@@ -1,23 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "args.h"
+#include "generator.h"
 
 int main(int argc, char *argv[])
 {
      SimConfig config;
+     SimState *state;
 
      if(parse_args(argc, argv, &config) == ARGS_ERROR)
      {
           return 1;
      }
 
-     // debug: print parsed config
-     printf("tickers:  %d\n", config.num_tickers);
-     printf("rate:     %d\n", config.rate);
-     printf("burst:    %.2f\n", config.burst);
-     printf("chaos:    %.2f\n", config.chaos);
-     printf("duration: %d\n", config.duration);
+     srand(time(NULL));
+
+     state = state_create(&config);
+
+     if(state == NULL)
+     {
+          return 1;
+     }
+
+     run_generator(state);
+     state_destroy(state);
 
      return 0;
 }
