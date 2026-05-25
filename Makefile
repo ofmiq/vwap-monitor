@@ -1,9 +1,9 @@
 CC     = gcc
-CFLAGS = -Wall -Wextra -Wpedantic -Werror
+CFLAGS = -Wall -Wextra -Wpedantic -Werror -fsanitize=address,leak,undefined
 
 SIM_DIR = simulator
-SIM_SRC = $(SIM_DIR)/main.c $(SIM_DIR)/args.c
-SIM_OBJ = bin/main.o bin/args.o
+SIM_SRC = $(SIM_DIR)/main.c $(SIM_DIR)/args.c $(SIM_DIR)/generator.c
+SIM_OBJ = bin/main.o bin/args.o bin/generator.o
 
 all: bin/simulator
 
