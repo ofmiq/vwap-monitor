@@ -5,6 +5,9 @@
 
 #define MAX_TICKER_LEN 8
 #define MAX_TICKERS    10
+#define BASE_PRICE     10000
+#define PRICE_RANGE    5000
+#define MAX_VOLUME     1000
 
 typedef struct
 {
@@ -15,5 +18,6 @@ typedef struct
 
 SimState *state_create(SimConfig *config);
 void      state_destroy(SimState *state);
+void      run_generator(SimState *state);
 
 #endif
