@@ -10,10 +10,10 @@ typedef struct
 {
      char       tickers[MAX_TICKERS][MAX_TICKER_LEN];
      long long  sim_time;
-     SimConfig  *config;
+     SimConfig *config;
 } SimState;
 
 SimState *state_create(SimConfig *config);
-void state_destroy(SimState *state);
+void      state_destroy(SimState *state);
 
 #endif
