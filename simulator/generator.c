@@ -49,9 +49,13 @@ SimState *state_create(SimConfig *config)
      return state;
 }
 
-void state_destroy(SimState *state) { free(state); }
+void state_destroy(SimState *state) 
+{
+     free(state); 
+}
 
-void run_generator(SimState *state) {
+void run_generator(SimState *state) 
+{
      long long max_time;
      max_time = (long long)state->config->duration * 1000000;
 
