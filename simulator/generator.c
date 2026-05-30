@@ -24,6 +24,7 @@ static void generate_one(SimState *state)
      sent_time  = state->sim_time + offset;
 
      printf("%s %d %d %lld\n", ticker, price, volume, sent_time);
+     fflush(stdout);
 }
 
 SimState *state_create(SimConfig *config)
