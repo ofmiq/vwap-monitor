@@ -56,6 +56,11 @@ static void generate_one(SimState *state)
      offset     = (rand() % (2 * max_offset + 1)) - max_offset;
      sent_time  = state->sim_time + offset;
 
+     if(sent_time < 0)
+     {
+          sent_time = 0;
+     }
+
      printf("%s %d %d %lld\n", ticker, price, volume, sent_time);
      fflush(stdout);
 }
