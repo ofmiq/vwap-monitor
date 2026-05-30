@@ -5,9 +5,14 @@
 
 #include "generator.h"
 
+// built-in list of real stock ticker symbols
 static const char *TICKER_NAMES[] = {"AAPL", "GOOG", "MSFT", "AMZN", "TSLA",
                                      "META", "NVDA", "NFLX", "AMD",  "INTC"};
 
+/**
+ * @brief Sleeps for the given number of microseconds
+ * @param us Number of microseconds to sleep
+ */
 static void sleep_us(long long us)
 {
      struct timespec ts;
@@ -23,6 +28,11 @@ static void sleep_us(long long us)
      nanosleep(&ts, NULL);
 }
 
+/**
+ * @brief Computes the pause duration before the next trade in microseconds
+ * @param state Pointer to the current SimState
+ * @return Pause duration in microseconds
+ */
 static long long compute_pause(SimState *state)
 {
      long long base_pause;
@@ -40,6 +50,10 @@ static long long compute_pause(SimState *state)
      return base_pause * (1 + (rand() % 3));
 }
 
+/**
+ * @brief Generates and prints a single trade message to stdout.
+ * @param state Pointer to the current SimState
+ */
 static void generate_one(SimState *state)
 {
      char      *ticker;
