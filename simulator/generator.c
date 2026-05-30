@@ -72,7 +72,7 @@ SimState *state_create(SimConfig *config)
      }
 
      state->config   = config;
-     state->sim_time = 0;
+     state->sim_time = 1000000;
 
      for(i = 0; i < config->num_tickers; i++)
      {
