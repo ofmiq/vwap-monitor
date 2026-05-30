@@ -13,6 +13,8 @@
 #define DEFAULT_CHAOS 0.3
 #define DEFAULT_DURATION 60
 
+#define MAX_TICKERS 10
+
 // Return codes
 #define ARGS_OK 0
 #define ARGS_ERROR 1
